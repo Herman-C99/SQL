@@ -1,0 +1,33 @@
+--Create a Sports Store Database
+
+CREATE TABLE sports 
+(id INTEGER PRIMARY KEY, 
+item TEXT, 
+price INTEGER,
+aisle INTEGER,
+sport TEXT);
+
+INSERT INTO sports VALUES
+(1, 'Baseballs', 3, 1, 'Baseball'),
+(2, 'Bats', 25, 1, 'Baseball'),
+(3, 'Gloves', 15, 1, 'Baseball'),
+(4, 'Cleats', 50, 3, 'Baseball'),
+(5, 'Basketball', 25, 2, 'Basketball'),
+(6, 'Whistle', 5, 2, 'Basketball'),
+(7, 'Football', 12, 4, 'Football'),
+(8, 'Shoulder Pads', 35, 4, 'Football'),
+(9, 'Knee Pads', 14, 4, 'Football'),
+(10, 'Cleats', 55, 3, 'Football'),
+(11, 'Pants', 20, 1, 'Baseball'),
+(12, 'Jersey', 15, 5, 'Baseball'),
+(13, 'Jersey', 20, 5,'Football'),
+(14, 'Jersey', 12, 5, 'Basketball'),
+(15, 'Shoes', 95, 3, 'Basketball')
+;
+
+--display the database ordered by price.
+SELECT * FROM sports ORDER BY price;
+
+--what is the average price of items in Baseball
+SELECT AVG (price) "avg baseball price" FROM sports WHERE sport='Baseball';
+
