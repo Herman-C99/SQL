@@ -1,0 +1,49 @@
+/* Create table about the people and what they do here */
+CREATE TABLE players
+    (id INTEGER PRIMARY KEY, number integer, player text, position_ID integer, team_id integer);
+
+INSERT INTO players VALUES
+    (1, 4, "Dak PRescott", 1,2),
+    (2, 21, "Zeke Elliott", 2,2),
+    (3, 17, "Josh Allen", 1,1),
+    (4, 12, "Tom Brady", 1,6),
+    (5, 11, "Micah Parsons", 5,2),
+    (6, 17, "Jaylen Waddle", 3,5),
+    (7, 30, "Austin Ekeler", 2,4),
+    (8, 88, "Dawson Knox", 4,1),
+    (9, 15, "Pat MAhomes", 1,3);
+
+CREATE TABLE teams
+    (id Integer Primary Key, Name text);
+
+INSERT INTO teams VALUES
+    (1,"Buffalo Bills"),
+    (2,"Dallas Cowboys"),
+    (3,"Kansas City Chiefs"),
+    (4,"Los Angeles Chargers"),
+    (5,"Miami Dolphins"),
+    (6,"Tampa Bay Buccaneers");
+
+CREATE Table positions 
+    (id INTEGER PRIMARY KEY, position text);
+
+INSERT INTO positions VALUES
+    (1,"QB"),
+    (2,"RB"),
+    (3,"WR"),
+    (4,"TE"),
+    (5,"DEF"),
+    (6,"Kicker");
+
+/*Full list of Players, positioned played, and teams they play for */
+
+SELECT players.number, players.player, positions.position, teams.name
+FROM players
+JOIN teams ON teams.id = players.team_id
+JOIN positions ON positions.id = players.position_id;
+
+
+
+
+    
+    
